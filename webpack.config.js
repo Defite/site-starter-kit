@@ -1,4 +1,3 @@
-var webpack = require("webpack");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
@@ -28,10 +27,5 @@ module.exports = {
     // Use the plugin to specify the resulting filename (and add needed behavior to the compiler)
     plugins: [
         new ExtractTextPlugin("public/css/bundle.css")
-    ],
-    resolve: {
-        alias: {
-            jquery: "jquery/dist/jquery"
-        }
-    }
+    ]
 }

@@ -9,7 +9,7 @@ Site Starter Kit with webpack, stylus and autoprefixer.
 npm install
 ```
 
-Stylus files are located in `app/stylus`. In order to put specific styl file on top of bundle.css, you must uncomment `require()` section and put styl file there.
+Stylus files are located in `app/stylus`. In order to put specific styl file on top of bundle.css, you must uncomment `require()` section and put styl file there. All images are in `app/img`, but you can change it's name.
 
 ## Load Webpack watcher
 

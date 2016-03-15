@@ -1,6 +1,8 @@
 # Site Starter Kit
 Site Starter Kit with webpack, stylus and autoprefixer.
 
+![Site Starter Kit](https://github.com/Defite/site-starter-kit/blob/master/site-starter-kit.png)
+
 ## Installation
 
 ```

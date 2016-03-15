@@ -1,12 +1,12 @@
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-    // The standard entry point and output config
-    entry: {
-        bundle: "./app/deps"
-    },
+    context: __dirname + "/app",
+    entry: "./deps",
     output: {
-        filename: "public/js/[name].js"
+        path: __dirname + "/public",
+        publicPath: "../",
+        filename: "js/[name].js"
     },
     module: {
         loaders: [
@@ -15,17 +15,20 @@ module.exports = {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader?browsers=last 2 version")
             },
-            // Optionally extract less files
-            // or any other compile-to-css language
+            // Optionally extract stylus files
             {
                 test: /\.styl$/,
                 loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader?browsers=last 2 version!stylus-loader")
-            }
-            // You could also use other loaders the same way. I. e. the autoprefixer-loader
+            },
+            // Operate with images
+            {
+                test: /\.(png|jpg|svg)$/,
+                loader: "file?name=[path][name].[ext]"
+            },
         ]
     },
     // Use the plugin to specify the resulting filename (and add needed behavior to the compiler)
     plugins: [
-        new ExtractTextPlugin("public/css/bundle.css")
+        new ExtractTextPlugin("css/bundle.css")
     ]
 }

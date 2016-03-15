@@ -3,6 +3,8 @@
  */
 //require("./stylus/main.styl");
 
+require('normalize.css');
+
 /**
  * Passes .styl files and return Array
  */
